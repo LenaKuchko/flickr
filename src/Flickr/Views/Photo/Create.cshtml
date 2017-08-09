@@ -1,0 +1,48 @@
+﻿@using System.Security.Claims
+@model List<Flickr.Models.Photo>
+
+@{
+    ViewData["Title"] = "Create Photo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create Photo</h2>
+<hr />
+<h4>Add a new Photo</h4>
+
+<form method="post" asp-action="Create" asp-controller="Photo" enctype="multipart/form-data">
+    <label>Title</label>
+    <div class="input-field">
+        <input type="text" id="Title" name="Title" />
+    </div>
+    <label>Description</label>
+    <div class="input-field">
+        <input type="text" id="Description" name="Description" />
+    </div>
+    <label>Choose Image</label>
+    <div class="input-field">
+        <input type="file" id="Image" name="Image" />
+    </div>
+    <button class="btn waves-effect" type="submit">Add to Database</button>
+</form>
+
+@*@using (Html.BeginForm())
+            {
+    <div class="form-group">
+        @Html.LabelFor(model => model.Title)
+        @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Description)
+        @Html.TextBoxFor(model => model.Description, new { @class = "form-control" })
+    </div>
+    <div>
+   
+             @Html.LabelFor(model => model.Image)
+   
+             @Html.TextBoxFor(model => model.Image, new { @type = "file"})
+    </div>
+
+    <input type="submit" value="Add a new Photo" />
+}*@
+<p>@Html.ActionLink("Back to Photos", "Index")</p>

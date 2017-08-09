@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Flickr.Models.Photo>
+
+@{
+    ViewData["Title"] = "Flickr";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="boxes">
+    @foreach (var listPhotos in Model)
+    {
+        <div class="box">
+            <div class="imgTemplate">
+            </div>
+            @Html.DisplayFor(modelPhoto => listPhotos.Title)
+            <br />
+            @Html.ActionLink("View", "Details", new { id = listPhotos.Id })
+        </div>
+    }
+
+</div>
