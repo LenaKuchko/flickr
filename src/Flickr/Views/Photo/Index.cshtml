@@ -6,15 +6,25 @@
 }
 
 <div class="boxes">
-    @foreach (var listPhotos in Model)
+    @foreach (var photo in Model)
     {
-        <div class="box">
-            <div class="imgTemplate">
+        string photoImage = "";
+        if (photo.Image != null)
+        {
+            var base64File = Convert.ToBase64String(photo.Image);
+            photoImage = String.Format("data:image/gif;base64,{0}", base64File);
+
+        }
+        <div class="dope-af-card">
+            <img src="@photoImage" width="200"/>
+            <div class="card-title">
+                <h5>@photo.Title</h5>
             </div>
-            @Html.DisplayFor(modelPhoto => listPhotos.Title)
-            <br />
-            @Html.ActionLink("View", "Details", new { id = listPhotos.Id })
+            <div class="card-description">
+                <p>@photo.Description</p>
+            </div>
         </div>
+
     }
 
 </div>

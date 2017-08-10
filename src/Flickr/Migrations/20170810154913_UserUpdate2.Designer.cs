@@ -8,9 +8,10 @@ using Flickr.Models;
 namespace Flickr.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170810154913_UserUpdate2")]
+    partial class UserUpdate2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")
@@ -72,15 +73,19 @@ namespace Flickr.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("ApplicationUserId");
+
                     b.Property<string>("Description");
 
                     b.Property<byte[]>("Image");
 
                     b.Property<string>("Title");
 
+                    b.Property<string>("UserId");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Photos");
                 });
@@ -210,9 +215,9 @@ namespace Flickr.Migrations
 
             modelBuilder.Entity("Flickr.Models.Photo", b =>
                 {
-                    b.HasOne("Flickr.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                    b.HasOne("Flickr.Models.ApplicationUser")
+                        .WithMany("MyPhotos")
+                        .HasForeignKey("ApplicationUserId");
                 });
 
             modelBuilder.Entity("Flickr.Models.Tag", b =>

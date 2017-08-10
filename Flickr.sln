@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Flickr", "src\Flickr\Flickr.xproj", "{BBD961A3-AE01-4401-AE5B-0387C55BE6D9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{272409D8-FD56-4D77-B89C-8AA599288B8D}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Flickr.Tests", "Flickr.Tests\Flickr.Tests.xproj", "{E6A4FA96-6CD5-42C9-A5F7-E8F0251C11B9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +26,16 @@ Global
 		{BBD961A3-AE01-4401-AE5B-0387C55BE6D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD961A3-AE01-4401-AE5B-0387C55BE6D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBD961A3-AE01-4401-AE5B-0387C55BE6D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A4FA96-6CD5-42C9-A5F7-E8F0251C11B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A4FA96-6CD5-42C9-A5F7-E8F0251C11B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A4FA96-6CD5-42C9-A5F7-E8F0251C11B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A4FA96-6CD5-42C9-A5F7-E8F0251C11B9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BBD961A3-AE01-4401-AE5B-0387C55BE6D9} = {206526CD-7974-45FA-B280-43E4F11D3F8E}
+		{E6A4FA96-6CD5-42C9-A5F7-E8F0251C11B9} = {272409D8-FD56-4D77-B89C-8AA599288B8D}
 	EndGlobalSection
 EndGlobal

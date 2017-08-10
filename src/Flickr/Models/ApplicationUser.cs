@@ -11,6 +11,5 @@ namespace Flickr.Models
     public class ApplicationUser : IdentityUser
     {
         public string Name { get; internal set; }
-        public virtual ICollection<Photo> MyPhotos { get; internal set; }
     }
 }

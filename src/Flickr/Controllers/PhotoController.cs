@@ -18,6 +18,10 @@ namespace Flickr.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
+        public PhotoController()
+        {
+
+        }
         public PhotoController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext db)
         {
             _userManager = userManager;
@@ -36,8 +40,9 @@ namespace Flickr.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(string title, string description, IFormFile image)
+        public async Task<IActionResult> Create(string title, string description, IFormFile image)
         {
+            var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             byte[] newImage = new byte[0];
             if (image != null)
             {
@@ -49,6 +54,7 @@ namespace Flickr.Controllers
                 }
             }
             Photo newPhoto = new Photo(title, description, newImage);
+            newPhoto.UserId = userId;
             db.Photos.Add(newPhoto);
             db.SaveChanges();
             return RedirectToAction("Index");
