@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using System;
 using System.IO;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+
 
 namespace Flickr.Controllers
 {
@@ -18,16 +18,16 @@ namespace Flickr.Controllers
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public PhotoController()
-        {
-
-        }
         public PhotoController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, ApplicationDbContext db)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _db = db;
         }
+        //public PhotoController()
+        //{
+
+        //}
         private ApplicationDbContext db = new ApplicationDbContext();
         // GET: /<controller>/
         public IActionResult Index()

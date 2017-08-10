@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{296D7A5F-D893-4546-BCA0-EEF3FB3BE344}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Flickr", "src\Flickr\Flickr.xproj", "{BBD961A3-AE01-4401-AE5B-0387C55BE6D9}"
